@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Контакты</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=0aabd5d1-e506-4287-80fa-55ce40a0839a&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <script defer src="javascripts/scripts.js"></script>
   </head>
-  <body>
+  <body class="contacts-page">
     <nav class="mainMenu">
       <div class="menuLeft">
         <a class="mainMenuLink active" href="contact.html">Контакты</a>
@@ -15,11 +20,44 @@
         <a class="mainMenuLink" href="events.html">Мероприятия</a>
         <a class="mainMenuLink" href="space.html">Пространство</a>
       </div>
-
       <a href="index.html">
         <img class="logo" src="images/logo.svg" alt="logo" />
       </a>
     </nav>
-    <h1>Контакты</h1>
+
+    <section class="contacts-section">
+      <div class="contacts-container">
+        <!-- Левая колонка -->
+        <div class="contacts-info">
+          <h1 class="contacts-title">КОНТАКТЫ</h1>
+
+          <div class="contacts-info-block">
+            <h3>Режим работы:</h3>
+            <p>вс — чт: 10:00 — 22:00<br />пт — сб: 10:00 — 23:00</p>
+          </div>
+
+          <div class="contacts-info-row">
+            <strong>Email:</strong> revansh@mail.ru
+          </div>
+          <div class="contacts-info-row">
+            <strong>Телефон для связи:</strong> +7 (921) 456-33-82
+          </div>
+        </div>
+
+        <div class="contacts-map-wrapper">
+          <div class="contacts-map">
+            <div id="map" class="map-container"></div>
+          </div>
+
+          <div class="address-under-map">
+            <strong>Адрес:</strong> ул. Творческая, 12, Москва
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <!-- твой футер -->
+    </footer>
   </body>
 </html>

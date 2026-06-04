@@ -2,13 +2,22 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Stadium';
+  src: url('../fonts/Stadium.otf') format('opentype');
+}
+
+h1 {
+  font-family: 'Stadium';
+}
+
 html {
   height: 100%;
 }
 
 body {
   width: 100%;
-  height: 100%;
+
   font-family: 'Inter', sans-serif;
   font-size: 1.6vw;
   color: #ffffff;
@@ -16,11 +25,18 @@ body {
 }
 
 .mainMenu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   width: 100%;
   padding: 1.6vw 3vw;
+
+  background-color: #090909;
 }
 
 .menuLeft {
@@ -47,4 +63,945 @@ body {
 .logo {
   width: 4vw;
   height: auto;
+}
+
+/* ==================== МАГАЗИН МЕРЧА ==================== */
+
+.shop-page {
+  background-color: white;
+}
+
+.shop-page-h1 {
+  font-family: 'Stadium';
+  color: black;
+  font-size: 30vw;
+  margin-bottom: -5vw;
+}
+
+.shop-section {
+  padding: 6vw 4.2vw;
+}
+
+.shop-description {
+  font-size: 1.4vw;
+  line-height: 1.45;
+  margin-bottom: 6vw;
+  color: #333;
+  max-width: 85vw;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9.8vw;
+}
+
+.product-card {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 324 / 387;
+  background-color: #f5f5f5;
+  border-radius: 0.1vw;
+  overflow: hidden;
+  margin-bottom: 1.8vw;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.06);
+}
+
+/* Название товара */
+.product-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4vw;
+  font-weight: 300;
+  color: #000000;
+  text-align: left;
+  line-height: 1.2;
+  min-height: 3.2vw;
+}
+
+.buy-btn {
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  background-color: #9c0c0c;
+  color: white;
+  border: none;
+  padding: 1.1vw 0;
+  font-size: 1.4vw;
+  font-weight: 300;
+  border-radius: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding-left: 0;
+}
+
+.buy-btn:hover {
+  background-color: #c20f0f;
+  transform: scale(1.03);
+}
+
+/* ==================== ПОДВАЛ ЧЕРНЫЙ ==================== */
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 5vw 4vw 4vw;
+  margin-top: 8vw;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 4vw;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 4vw;
+}
+
+.footer-nav a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1.25vw;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ffffff;
+}
+
+.footer-logo img {
+  width: 4.5vw;
+  height: auto;
+}
+
+.footer-bottom {
+  margin: 9.5vw auto 0;
+  text-align: left;
+}
+
+.footer-info {
+  margin-bottom: -0.5vw;
+}
+
+.footer-info p {
+  font-size: 1.4vw;
+  color: white;
+}
+
+.footer-name {
+  font-family: 'Stadium', sans-serif;
+  font-size: 30vw;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+  margin: 0;
+}
+
+/* ==================== СТРАНИЦА ТОВАРА ==================== */
+
+.product-page {
+  background-color: #ffffff;
+}
+
+.product-section {
+  padding: 6vw 4vw 8vw;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.product-container {
+  display: flex;
+  gap: 6vw;
+  margin-bottom: 8vw;
+  align-items: flex-start;
+}
+
+.product-image-big {
+  flex: 1;
+  max-width: 55%;
+}
+
+.product-image-big img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.1vw;
+}
+
+.product-info {
+  flex: 1;
+  padding-top: 1vw;
+}
+
+.product-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 15vw;
+  line-height: 0.8;
+  text-transform: uppercase;
+  margin: 0 0 2.5vw 0;
+  color: #000;
+}
+
+.price-block {
+  margin-bottom: 4vw;
+}
+
+.current-price {
+  font-size: 3.2vw;
+  font-weight: 700;
+  color: #9c0c0c;
+}
+
+.old-price {
+  font-size: 3.2vw;
+  color: #999;
+  text-decoration: line-through;
+  margin-left: 1.8vw;
+}
+
+.discount {
+  color: rgb(0, 0, 0);
+  font-size: 1.4vw;
+  font-weight: 400;
+  margin-top: 0.5vw;
+}
+
+.add-to-cart {
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  width: 18vw;
+  background-color: #9c0c0c;
+  color: white;
+  border: none;
+  padding: 1.1vw 0;
+  font-size: 1.4vw;
+  font-weight: 300;
+  border-radius: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  padding-left: 0;
+}
+
+.add-to-cart:hover {
+  background-color: #c20f0f;
+  transform: scale(1.03);
+}
+
+.back-btn {
+  font-family: 'Inter', sans-serif;
+  width: 18vw;
+  background-color: #716b6b;
+  color: white;
+  border: none;
+  padding: 1.1vw 2.5vw;
+  font-size: 1.4vw;
+  font-weight: 300;
+  border-radius: 0.1vw;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 10vw;
+}
+
+.back-btn:hover {
+  border-color: #999;
+  color: #000;
+}
+
+.recommended {
+  margin-top: 7vw;
+}
+
+.recommended-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.2vw;
+  margin-bottom: 3vw;
+  color: #000;
+  font-weight: 800;
+}
+
+.recommended-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9.8vw;
+}
+/* ==================== ГЛАВНАЯ СТРАНИЦА (ЛЕНДИНГ) ==================== */
+
+.home-page {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ==================== НАВБАР ==================== */
+.mainMenu {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.8vw 4vw;
+  background-color: #000000;
+  border-bottom: 1px solid #222;
+}
+
+.menuLeft {
+  display: flex;
+  gap: 4.5vw;
+}
+
+.mainMenuLink {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 1.3vw;
+  transition: color 0.3s;
+}
+
+.mainMenuLink:hover,
+.mainMenuLink.active {
+  color: #ffffff;
+}
+
+.logo {
+  width: 4.5vw;
+  height: auto;
+}
+
+/* ==================== HERO TITLE SECTION ==================== */
+.hero-title-section {
+  background-color: #000;
+  padding: 10vw 4vw 4vw;
+  width: 100%;
+  height: 55vw;
+}
+
+.hero-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 25vw;
+  line-height: 19vw;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+}
+
+.red {
+  color: #9c0c0c;
+}
+
+/* ==================== HERO IMAGE SECTION ==================== */
+.hero-image-section {
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: 60vw;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4vw 5vw 3.5vw;
+  color: white;
+}
+
+.hero-description {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.hero-description p {
+  font-size: 1.4vw;
+  line-height: 1.55;
+  color: #ffffff;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+
+.btn-primary {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  padding: 1.4vw 4.2vw;
+  font-size: 1.4vw;
+  text-decoration: none;
+  border-radius: 0.1vw;
+  display: inline-block;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* чтобы кнопка не переносилась */
+  flex-shrink: 0; /* кнопка не сжимается */
+}
+
+.btn-primary:hover {
+  background-color: #dbdbdb;
+  transform: scale(1.05);
+}
+/* ==================== ПОБЕДИТЕЛИ НЕДЕЛИ ==================== */
+.winners {
+  background-color: #000;
+  padding: 6vw 4vw;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 22vw;
+  text-transform: uppercase;
+  margin-bottom: 4vw;
+  color: #ffffff;
+  text-align: right;
+}
+
+.winners-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.winners-track {
+  display: flex;
+  gap: 2.5vw;
+  transition: transform 0.6s ease-in-out;
+}
+
+.winners-track img {
+  width: 28vw;
+  height: 35vw;
+  object-fit: cover;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #9c0c0c;
+  color: white;
+  border: none;
+  width: 70px;
+  height: 70px;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.slider-btn:first-child {
+  left: 20px;
+}
+.slider-btn:last-child {
+  right: 20px;
+}
+/* ==================== ХОЧЕШЬ УВИДЕТЬ ВЖИВУЮ ==================== */
+.live {
+  background-color: #000;
+  padding: 5vw 4vw;
+}
+
+.live-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 25vw;
+  line-height: 19vw;
+  text-transform: uppercase;
+}
+
+.live-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.live-text {
+  font-size: 1.5vw;
+  max-width: 900px;
+  line-height: 1.4;
+}
+
+.btn-red {
+  background-color: #9c0c0c;
+  color: white;
+  padding: 1.4vw 4.5vw;
+  font-size: 1.4vw;
+  text-decoration: none;
+  border-radius: 0.1vw;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-red:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== ВЕБ-ПОСТЕРЫ ==================== */
+
+.posters {
+  padding: 6vw 4vw;
+  background-color: #000;
+  position: relative;
+  background-image: url('../images/bg-poster-petyx.svg');
+  background-repeat: no-repeat;
+  background-position-y: 20vw;
+  background-size: 100%;
+  overflow: hidden;
+  height: 80vw;
+}
+
+.section-title2 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 21vw;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: left;
+}
+
+.posters-description {
+  font-size: 1.4vw;
+  line-height: 1.45;
+  color: #ffffff;
+  max-width: 50vw;
+  margin-top: -4vw;
+  margin-bottom: 6vw;
+}
+.posters-content {
+  display: flex;
+  gap: 3vw;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.poster-link {
+  z-index: 4;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.poster-link poster-big {
+  margin-top: 5vw;
+}
+
+.poster-link:hover {
+  transform: scale(1.04);
+}
+
+.poster-link img {
+  width: 100%;
+  display: block;
+  transition: all 0.4s ease;
+}
+
+/* Эффект затемнения при наведении */
+.poster-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.4s ease;
+}
+
+.poster-link:hover::after {
+  background: rgba(0, 0, 0, 0.45); /* затемнение */
+}
+
+/* ==================== БУДЬ В КУРСЕ ==================== */
+.subscribe {
+  background-color: #000;
+  padding: 8vw 4vw;
+}
+
+.subscribe-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 20vw;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+.subscribe-text {
+  font-size: 1.4vw;
+  text-align: right;
+  margin-right: 1.8vw;
+  margin-top: -2.4vw;
+}
+
+.subscribe-form {
+  display: flex;
+  gap: 1.5vw;
+  max-width: 50vw;
+  margin-top: 5vw;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 1.4vw 2vw;
+  font-size: 1.3vw;
+  background-color: #111;
+  border: 1px solid #ffffff;
+  color: white;
+  border-radius: 0.1vw;
+}
+
+.subscribe-form button {
+  padding: 1.4vw 3.5vw;
+  background-color: #9c0c0c;
+  color: white;
+  border: none;
+  font-size: 1.3vw;
+  cursor: pointer;
+  border-radius: 0.1vw;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+  background-color: #c20f0f;
+}
+
+/* ==================== ПРАВИЛА ПОСЕЩЕНИЯ ==================== */
+
+.rules-page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.rules-section {
+  padding: 6vw 4vw 10vw;
+}
+
+.rules-main-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 27vw;
+  line-height: 20vw;
+  text-transform: uppercase;
+  margin-bottom: 2vw;
+  text-align: left;
+}
+
+.rules-subtitle {
+  font-size: 1.4vw;
+  color: #ffffff;
+  margin-bottom: 10vw;
+  margin-top: -3vw;
+}
+
+.rules-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 27vw;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: right;
+}
+
+.rules-list {
+  list-style-type: disc;
+  list-style-position: outside;
+  font-size: 1.4vw;
+  line-height: 0.6vw;
+  text-align: left;
+  padding-left: 57vw;
+  margin-top: -6vw;
+}
+
+.rules-list li {
+  margin: 1.2vw 0;
+}
+
+.rules-big-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 27vw;
+  line-height: 20vw;
+  text-transform: uppercase;
+  margin: 13vw 0 0 0;
+}
+
+.rules-book-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -2vw;
+}
+.rules-text {
+  font-size: 1.4vw;
+  color: #ffffff;
+  margin-top: -2vw;
+}
+
+.rules-btn {
+  padding: 1.4vw 5vw;
+  font-size: 1.5vw;
+  margin-bottom: 2vw;
+}
+
+.rules-btn-bottom {
+  margin-top: 2vw;
+  padding: 1.4vw 40vw;
+  white-space: nowrap;
+}
+
+.rules-books {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.book-big {
+  width: 100%;
+}
+
+.book-big img {
+  width: 100%;
+  border-radius: 0.1vw;
+}
+
+.books-small {
+  display: flex;
+  gap: 2vw;
+}
+
+.book-small {
+  flex: 1;
+}
+
+.book-small img {
+  width: 100%;
+  border-radius: 0.1vw;
+}
+
+/* ==================== КОНТАКТЫ ==================== */
+
+.contacts-page {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.contacts-section {
+  padding: 6vw 4vw 10vw;
+}
+
+.contacts-container {
+  display: flex;
+  gap: 6vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Левая колонка */
+.contacts-info {
+  flex: 1;
+}
+
+.contacts-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 24vw;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.contacts-info-block {
+  margin-bottom: 15.5vw;
+  margin-top: -2vw;
+}
+
+.contacts-info-block h3 {
+  font-size: 1.4vw;
+  font-weight: 700;
+}
+
+.contacts-info-block p {
+  font-size: 1.4vw;
+  line-height: 1.1;
+}
+
+.contacts-info-row {
+  font-size: 1.45vw;
+  line-height: 1.6;
+
+  display: flex;
+  gap: 0.8vw;
+}
+
+.contacts-info-row strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Правая колонка */
+.contacts-map-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.contacts-map {
+  flex: 1;
+  border-radius: 0.1vw;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.map-container {
+  width: 100%;
+  height: 40vw;
+  background-color: #333;
+}
+
+/* Адрес под картой */
+.address-under-map {
+  color: #ffffff;
+  font-size: 1.4vw;
+  text-align: center;
+  text-align: right;
+  margin-top: 3vw;
+}
+
+/* ==================== Пространство ==================== */
+
+.space-longread {
+  background: #000;
+  color: #fff;
+}
+
+.longread-block {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  align-items: start;
+}
+
+.longread-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.longread-left img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  display: block;
+}
+
+.longread-right {
+  height: 300vh;
+  position: relative;
+}
+
+.right-content {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 10vw 4vw 3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.floor-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.floor-title h2 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 26vw;
+  margin: 0;
+  line-height: 0.75;
+  text-align: right;
+}
+
+.floor-title h3 {
+  font-size: 1.4vw;
+  text-align: right;
+  margin: -3vw 0 0 0;
+  padding-right: 4.3vw;
+}
+
+.floor-title .h3-2 {
+  padding-right: 6vw;
+}
+
+.right-content p {
+  font-size: 1.4vw;
+}
+
+.rules-preview {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  padding: 6vw 5.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 4vw;
+}
+
+.rules-preview-content h2 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 23vw;
+  line-height: 17vw;
+  text-transform: uppercase;
+
+  max-width: 70vw;
+}
+
+.rules-preview-content p {
+  font-size: 1.4vw;
+  line-height: 1.15;
+}
+
+.rules-preview-button {
+  background-color: #9c0c0c;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.4vw;
+  padding: 1.4vw 4.5vw;
+  border-radius: 0.1vw;
+  display: inline-flex;
+  gap: 2vw;
+  align-items: center;
+  transition: all 0.3s ease;
+  margin-bottom: 0.4vw;
+}
+
+.rules-preview-button:hover {
+  transform: scale(1.05);
+}
+
+.rules-preview-button span {
+  font-size: 2vw;
+  line-height: 1;
 }

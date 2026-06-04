@@ -10,7 +10,6 @@
     />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script defer src="javascripts/scripts.js"></script>
-    <script defer src="javascripts/index.js"></script>
   </head>
   <body>
     <nav class="mainMenu">
@@ -26,5 +25,112 @@
         <img class="logo" src="images/logo.svg" alt="logo" />
       </a>
     </nav>
+
+    <!-- ГЕРОЙ СЕКЦИЯ -->
+    <!-- СЕКЦИЯ С ЗАГОЛОВКОМ -->
+    <section class="hero-title-section">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="red">РЕВАНШ</span><br />
+          НАЧИНАЕТСЯ ЗДЕСЬ
+        </h1>
+      </div>
+    </section>
+
+    <!-- СЕКЦИЯ С ФОТО И ТЕКСТОМ -->
+    <section class="hero-image-section">
+      <div class="hero-image-wrapper">
+        <img src="images/ring.svg" alt="Боксерский ринг" class="hero-image" />
+
+        <div class="hero-overlay">
+          <div class="hero-description">
+            <p>
+              Пространство, созданное для просмотра боёв.<br />Здесь всё
+              сосредоточено вокруг ринга: ты чувствуешь<br />
+              напряжение, эмоции и энергию каждого поединка,<br />
+              находясь максимально близко к происходящему.
+            </p>
+            <a href="space.html" class="btn-primary">Посмотреть →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПОБЕДИТЕЛИ НЕДЕЛИ -->
+
+    <section class="winners">
+      <h2 class="section-title">ПОБЕДИТЕЛИ НЕДЕЛИ</h2>
+
+      <div class="winners-slider" id="winnersSlider">
+        <button class="slider-btn" id="prevBtn">←</button>
+
+        <div class="winners-track" id="winnersTrack">
+          <img src="images/fighter1.svg" alt="Боксёр 1" />
+          <img src="images/fighter2.svg" alt="Боксёр 2" />
+          <img src="images/fighter3.svg" alt="Боксёр 3" />
+        </div>
+
+        <button class="slider-btn" id="nextBtn">→</button>
+      </div>
+    </section>
+    <!-- ХОЧЕШЬ УВИДЕТЬ ВЖИВУЮ -->
+    <section class="live">
+      <div class="live-content">
+        <h2 class="live-title">
+          ХОЧЕШЬ УВИДЕТЬ<br />
+          <span class="red">ВЖИВУЮ?</span>
+        </h2>
+        <div class="live-bottom">
+          <p class="live-text">
+            Переходи в раздел мероприятий и выбирай билеты на ближайшие
+            события.<br />
+            Не упусти возможность увидеть бой и почувствовать атмосферу ринга.
+          </p>
+          <a href="events.html" class="btn-red">Посмотреть →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ВЕБ-ПОСТЕРЫ -->
+    <section class="posters">
+      <h2 class="section-title2">ВЕБ-ПОСТЕРЫ</h2>
+      <p class="posters-description">
+        Наши работы за пределами ринга — это отражение нашей<br />
+        силы, дисциплины и характера в каждом шаге вне боя.
+      </p>
+      <div class="posters-content">
+        <a
+          href="https://potavaelizaveta-collab.github.io/reveg/?utm_source=yandex.ru&utm_medium=referral&utm_content=%2F"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="poster-link poster-big"
+        >
+          <img src="images/poster-revansh.svg" alt="Реванш" />
+        </a>
+
+        <a
+          href="https://potavaelizaveta-collab.github.io/revansh/?utm_source=yandex.ru&utm_medium=referral&utm_content=%2F"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="poster-link poster-small"
+        >
+          <img src="images/poster-petyxom.svg" alt="Почувствуй себя петухом" />
+        </a>
+      </div>
+    </section>
+
+    <!-- БУДЬ В КУРСЕ -->
+    <section class="subscribe">
+      <h2 class="subscribe-title">БУДЬ В КУРСЕ</h2>
+      <p class="subscribe-text">
+        Новые события, анонсы и специальные форматы будут<br />
+        приходить тебе первыми. Без спама — только важное.
+      </p>
+
+      <form class="subscribe-form">
+        <input type="email" placeholder="Введите почту" required />
+        <button type="submit" class="btn-red">Отправить</button>
+      </form>
+    </section>
   </body>
 </html>
