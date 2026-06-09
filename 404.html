@@ -1,21 +1,63 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>404: страница не найдена</title>
-    <link rel="stylesheet" href="stylesheets/404.css" />
-    <script defer src="javascripts/404.js"></script>
+    <title>404: Страница не найдена</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
   </head>
-  <body>
-    <div class="stars"></div>
-    <main>
-      <section class="text">
+  <body class="error-page">
+    <nav class="mainMenu">
+      <div class="menuLeft">
+        <a class="mainMenuLink" href="contact.html">Контакты</a>
+        <a class="mainMenuLink" href="rules.html">Правила посещения</a>
+        <a class="mainMenuLink" href="shop.html">Магазин мерча</a>
+        <a class="mainMenuLink" href="events.html">Мероприятия</a>
+        <a class="mainMenuLink" href="space.html">Пространство</a>
+      </div>
+
+      <a href="index.html">
+        <img class="logo" src="images/logo.svg" alt="logo" />
+      </a>
+    </nav>
+
+    <main class="error-hero">
+      <h1 class="error-title">ОШИБКА 404</h1>
+
+      <div class="error-content">
         <p>
-          В зале Музея Огни москвы хранится моножество фонарей и лампад, но
-          такой страницы нет ни в одной экспозиции.
+          Страница отправлена в нокаут или никогда<br />
+          не существовала. Вернитесь на главную<br />
+          и продолжайте бой.
         </p>
-      </section>
+
+        <a class="error-button" href="index.html">Вернуться на главную</a>
+      </div>
     </main>
+
+    <footer class="footer error-footer">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="contact.html">Контакты</a>
+          <a href="rules.html">Правила посещения</a>
+          <a href="shop.html">Магазин мерча</a>
+          <a href="events.html">Мероприятия</a>
+          <a href="space.html">Пространство</a>
+        </nav>
+
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.svg" alt="logo" />
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <p>Б25Д310</p>
+          <p>Куратор: Камила Рихтер</p>
+        </div>
+
+        <div class="footer-name">ПОТАВА ЕЛИЗАВЕТА</div>
+      </div>
+    </footer>
   </body>
 </html>

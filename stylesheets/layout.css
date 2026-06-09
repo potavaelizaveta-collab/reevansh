@@ -7,73 +7,77 @@
   src: url('../fonts/Stadium.otf') format('opentype');
 }
 
-h1 {
-  font-family: 'Stadium';
-}
-
 html {
   height: 100%;
 }
 
 body {
   width: 100%;
-
+  margin: 0;
   font-family: 'Inter', sans-serif;
   font-size: 1.6vw;
   color: #ffffff;
   background-color: #090909;
 }
 
+h1 {
+  font-family: 'Stadium', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ==================== НАВБАР ==================== */
+
 .mainMenu {
   position: sticky;
   top: 0;
   z-index: 1000;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   width: 100%;
-  padding: 1.6vw 3vw;
-
-  background-color: #090909;
+  padding: 1.8vw 4vw;
+  background-color: #000000;
+  border-bottom: 1px solid #222;
 }
 
 .menuLeft {
   display: flex;
-  gap: 6.1vw;
+  gap: 4.5vw;
 }
 
 .mainMenuLink {
-  font-size: 1.4vw;
   color: #cccccc;
   text-decoration: none;
-  transition: 0.3s ease;
+  font-size: 1.3vw;
+  transition: color 0.3s ease;
 }
 
-.mainMenuLink:hover {
+.mainMenuLink:hover,
+.mainMenuLink.active {
   color: #ffffff;
 }
 
 .mainMenuLink.active {
-  color: #ffffff;
   font-weight: 700;
 }
 
 .logo {
-  width: 4vw;
+  width: 4.5vw;
   height: auto;
 }
 
 /* ==================== МАГАЗИН МЕРЧА ==================== */
 
 .shop-page {
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .shop-page-h1 {
-  font-family: 'Stadium';
-  color: black;
+  font-family: 'Stadium', sans-serif;
+  color: #000000;
   font-size: 30vw;
   margin-bottom: -5vw;
 }
@@ -86,7 +90,7 @@ body {
   font-size: 1.4vw;
   line-height: 1.45;
   margin-bottom: 6vw;
-  color: #333;
+  color: #333333;
   max-width: 85vw;
 }
 
@@ -126,7 +130,6 @@ body {
   transform: scale(1.06);
 }
 
-/* Название товара */
 .product-name {
   font-family: 'Inter', sans-serif;
   font-size: 1.4vw;
@@ -137,11 +140,11 @@ body {
   min-height: 3.2vw;
 }
 
-.buy-btn {
+.buy-btn,
+.add-to-cart {
   font-family: 'Inter', sans-serif;
-  width: 100%;
   background-color: #9c0c0c;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 1.1vw 0;
   font-size: 1.4vw;
@@ -150,41 +153,53 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
-  padding-left: 0;
+  text-decoration: none;
 }
 
-.buy-btn:hover {
+.buy-btn {
+  width: 100%;
+}
+
+.add-to-cart {
+  display: inline-block;
+  width: 18vw;
+}
+
+.buy-btn:hover,
+.add-to-cart:hover {
   background-color: #c20f0f;
   transform: scale(1.03);
 }
 
-/* ==================== ПОДВАЛ ЧЕРНЫЙ ==================== */
+/* ==================== ФУТЕР ==================== */
 
-.footer {
-  background-color: #000000;
+.footer,
+.site-footer,
+.error-footer {
+  margin-top: 0;
+  padding: 4vw 5.8vw 1vw 3.6vw;
+  background: #000000;
   color: #ffffff;
-  padding: 5vw 4vw 4vw;
-  margin-top: 8vw;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
+  max-width: none;
   margin: 0 auto;
-  padding-bottom: 4vw;
+  padding-bottom: 20vw;
 }
 
 .footer-nav {
   display: flex;
-  gap: 4vw;
+  gap: 5.8vw;
 }
 
 .footer-nav a {
-  color: #cccccc;
+  color: inherit;
   text-decoration: none;
-  font-size: 1.25vw;
+  font-size: 1.45vw;
   transition: color 0.3s ease;
 }
 
@@ -198,26 +213,101 @@ body {
 }
 
 .footer-bottom {
-  margin: 9.5vw auto 0;
+  margin: 0 auto;
   text-align: left;
 }
 
 .footer-info {
-  margin-bottom: -0.5vw;
+  margin-bottom: 1.8vw;
 }
 
 .footer-info p {
-  font-size: 1.4vw;
-  color: white;
+  margin: 0;
+  color: inherit;
+  font-size: 1.35vw;
+  line-height: 1.15;
 }
 
 .footer-name {
   font-family: 'Stadium', sans-serif;
-  font-size: 30vw;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-align: left;
+  font-size: 25vw;
+  line-height: 0.8;
+  max-width: 80vw;
   margin: 0;
+  color: inherit;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.footer-inverse,
+.site-footer.footer-inverse {
+  background: #ffffff;
+  color: #000000;
+}
+
+.footer-inverse .footer-logo img,
+.site-footer.footer-inverse .footer-logo img {
+  filter: invert(1);
+}
+
+/* ==================== 404 ==================== */
+
+.error-page {
+  background: #000000;
+  color: #ffffff;
+}
+
+.error-page .mainMenu {
+  position: relative;
+}
+
+.error-hero {
+  min-height: 60vw;
+  padding: 12.8vw 4.6vw 13.6vw;
+  background: #ffffff;
+  color: #000000;
+}
+
+.error-title {
+  font-family: 'Stadium', sans-serif;
+  font-size: 35vw;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.error-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4vw;
+  padding-left: 0.1vw;
+}
+
+.error-content p {
+  max-width: 42vw;
+  margin: 0;
+  color: #000000;
+  font-size: 1.6vw;
+  line-height: 1.18;
+}
+
+.error-button {
+  display: inline-block;
+  margin-top: 1.1vw;
+  padding: 1vw 1.8vw;
+  background: #9c0c0c;
+  color: #ffffff;
+  font-size: 1.55vw;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.error-button:hover {
+  background: #c20f0f;
+  transform: scale(1.03);
 }
 
 /* ==================== СТРАНИЦА ТОВАРА ==================== */
@@ -260,62 +350,42 @@ body {
   font-size: 15vw;
   line-height: 0.8;
   text-transform: uppercase;
-  margin: 0 0 2.5vw 0;
-  color: #000;
+  margin: 0 0 2.5vw;
+  color: #000000;
 }
 
 .price-block {
   margin-bottom: 4vw;
 }
 
-.current-price {
+.current-price,
+.old-price {
   font-size: 3.2vw;
+}
+
+.current-price {
   font-weight: 700;
   color: #9c0c0c;
 }
 
 .old-price {
-  font-size: 3.2vw;
-  color: #999;
+  color: #999999;
   text-decoration: line-through;
   margin-left: 1.8vw;
 }
 
 .discount {
-  color: rgb(0, 0, 0);
+  color: #000000;
   font-size: 1.4vw;
   font-weight: 400;
   margin-top: 0.5vw;
-}
-
-.add-to-cart {
-  display: inline-block;
-  text-decoration: none;
-  font-family: 'Inter', sans-serif;
-  width: 18vw;
-  background-color: #9c0c0c;
-  color: white;
-  border: none;
-  padding: 1.1vw 0;
-  font-size: 1.4vw;
-  font-weight: 300;
-  border-radius: 0.1vw;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  padding-left: 0;
-}
-
-.add-to-cart:hover {
-  background-color: #c20f0f;
-  transform: scale(1.03);
 }
 
 .back-btn {
   font-family: 'Inter', sans-serif;
   width: 18vw;
   background-color: #716b6b;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 1.1vw 2.5vw;
   font-size: 1.4vw;
@@ -329,8 +399,8 @@ body {
 }
 
 .back-btn:hover {
-  border-color: #999;
-  color: #000;
+  border-color: #999999;
+  color: #000000;
 }
 
 .recommended {
@@ -341,15 +411,17 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 2.2vw;
   margin-bottom: 3vw;
-  color: #000;
+  color: #000000;
   font-weight: 800;
 }
 
 .recommended-grid {
+  display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 9.8vw;
 }
-/* ==================== ГЛАВНАЯ СТРАНИЦА (ЛЕНДИНГ) ==================== */
+
+/* ==================== ГЛАВНАЯ СТРАНИЦА ==================== */
 
 .home-page {
   background-color: #000000;
@@ -357,44 +429,8 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* ==================== НАВБАР ==================== */
-.mainMenu {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.8vw 4vw;
-  background-color: #000000;
-  border-bottom: 1px solid #222;
-}
-
-.menuLeft {
-  display: flex;
-  gap: 4.5vw;
-}
-
-.mainMenuLink {
-  color: #cccccc;
-  text-decoration: none;
-  font-size: 1.3vw;
-  transition: color 0.3s;
-}
-
-.mainMenuLink:hover,
-.mainMenuLink.active {
-  color: #ffffff;
-}
-
-.logo {
-  width: 4.5vw;
-  height: auto;
-}
-
-/* ==================== HERO TITLE SECTION ==================== */
 .hero-title-section {
-  background-color: #000;
+  background-color: #000000;
   padding: 10vw 4vw 4vw;
   width: 100%;
   height: 55vw;
@@ -413,7 +449,6 @@ body {
   color: #9c0c0c;
 }
 
-/* ==================== HERO IMAGE SECTION ==================== */
 .hero-image-section {
   position: relative;
 }
@@ -427,11 +462,11 @@ body {
 
 .hero-overlay {
   position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   padding: 4vw 5vw 3.5vw;
-  color: white;
+  color: #ffffff;
 }
 
 .hero-description {
@@ -441,34 +476,55 @@ body {
 }
 
 .hero-description p {
+  flex: 1;
+  margin: 0;
+  color: #ffffff;
   font-size: 1.4vw;
   line-height: 1.55;
-  color: #ffffff;
-  margin: 0;
   text-align: left;
-  flex: 1;
+}
+
+.btn-primary,
+.btn-red,
+.rules-preview-button,
+.event-button,
+.space-button {
+  text-decoration: none;
+  border-radius: 0.1vw;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
   background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  color: #000000;
   padding: 1.4vw 4.2vw;
   font-size: 1.4vw;
-  text-decoration: none;
-  border-radius: 0.1vw;
-  display: inline-block;
-  transition: all 0.3s ease;
-  white-space: nowrap; /* чтобы кнопка не переносилась */
-  flex-shrink: 0; /* кнопка не сжимается */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-primary:hover {
   background-color: #dbdbdb;
   transform: scale(1.05);
 }
+
+.btn-red {
+  background-color: #9c0c0c;
+  color: #ffffff;
+  padding: 1.4vw 4.5vw;
+  font-size: 1.4vw;
+}
+
+.btn-red:hover {
+  transform: scale(1.05);
+}
+
 /* ==================== ПОБЕДИТЕЛИ НЕДЕЛИ ==================== */
+
 .winners {
-  background-color: #000;
+  background-color: #000000;
   padding: 6vw 4vw;
   text-align: center;
 }
@@ -482,49 +538,44 @@ body {
   text-align: right;
 }
 
-.winners-slider {
+.winners-slider-wrapper,
+.winners .winners-slider-wrapper {
+  height: 43vw;
+  margin-top: -4vw;
+  background-image: url('../images/bg-event.svg');
+  background-repeat: no-repeat;
+  background-position-y: -8vw;
+  background-size: 100%;
+}
+
+.winners-slider,
+.winners .winners-slider {
   position: relative;
   overflow: hidden;
+  margin-top: 0;
 }
 
-.winners-track {
-  display: flex;
-  gap: 2.5vw;
-  transition: transform 0.6s ease-in-out;
-}
-
-.winners-track img {
+.winners-slide,
+.winners .winners-slide {
   width: 28vw;
+}
+
+.winners-slide img,
+.winners .winners-slide img {
   height: 35vw;
   object-fit: cover;
-  border-radius: 12px;
-  flex-shrink: 0;
+  border: 0.25vw solid #9c0c0c;
 }
 
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #9c0c0c;
-  color: white;
-  border: none;
-  width: 70px;
-  height: 70px;
-  font-size: 32px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
+.winners-dots,
+.winners .winners-dots {
+  margin-top: -2vw;
 }
 
-.slider-btn:first-child {
-  left: 20px;
-}
-.slider-btn:last-child {
-  right: 20px;
-}
 /* ==================== ХОЧЕШЬ УВИДЕТЬ ВЖИВУЮ ==================== */
+
 .live {
-  background-color: #000;
+  background-color: #000000;
   padding: 5vw 4vw;
 }
 
@@ -547,33 +598,18 @@ body {
   line-height: 1.4;
 }
 
-.btn-red {
-  background-color: #9c0c0c;
-  color: white;
-  padding: 1.4vw 4.5vw;
-  font-size: 1.4vw;
-  text-decoration: none;
-  border-radius: 0.1vw;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-.btn-red:hover {
-  transform: scale(1.05);
-}
-
 /* ==================== ВЕБ-ПОСТЕРЫ ==================== */
 
 .posters {
-  padding: 6vw 4vw;
-  background-color: #000;
   position: relative;
+  overflow: hidden;
+  height: 80vw;
+  padding: 6vw 4vw;
+  background-color: #000000;
   background-image: url('../images/bg-poster-petyx.svg');
   background-repeat: no-repeat;
   background-position-y: 20vw;
   background-size: 100%;
-  overflow: hidden;
-  height: 80vw;
 }
 
 .section-title2 {
@@ -592,6 +628,7 @@ body {
   margin-top: -4vw;
   margin-bottom: 6vw;
 }
+
 .posters-content {
   display: flex;
   gap: 3vw;
@@ -608,10 +645,6 @@ body {
   transition: transform 0.4s ease;
 }
 
-.poster-link poster-big {
-  margin-top: 5vw;
-}
-
 .poster-link:hover {
   transform: scale(1.04);
 }
@@ -622,25 +655,22 @@ body {
   transition: all 0.4s ease;
 }
 
-/* Эффект затемнения при наведении */
 .poster-link::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0);
   transition: background 0.4s ease;
 }
 
 .poster-link:hover::after {
-  background: rgba(0, 0, 0, 0.45); /* затемнение */
+  background: rgba(0, 0, 0, 0.45);
 }
 
 /* ==================== БУДЬ В КУРСЕ ==================== */
+
 .subscribe {
-  background-color: #000;
+  background-color: #000000;
   padding: 8vw 4vw;
 }
 
@@ -669,21 +699,21 @@ body {
   flex: 1;
   padding: 1.4vw 2vw;
   font-size: 1.3vw;
-  background-color: #111;
+  background-color: #111111;
   border: 1px solid #ffffff;
-  color: white;
+  color: #ffffff;
   border-radius: 0.1vw;
 }
 
 .subscribe-form button {
   padding: 1.4vw 3.5vw;
   background-color: #9c0c0c;
-  color: white;
+  color: #ffffff;
   border: none;
   font-size: 1.3vw;
   cursor: pointer;
   border-radius: 0.1vw;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .subscribe-form button:hover {
@@ -744,7 +774,7 @@ body {
   font-size: 27vw;
   line-height: 20vw;
   text-transform: uppercase;
-  margin: 13vw 0 0 0;
+  margin: 13vw 0 0;
 }
 
 .rules-book-info {
@@ -753,6 +783,7 @@ body {
   justify-content: space-between;
   margin-top: -2vw;
 }
+
 .rules-text {
   font-size: 1.4vw;
   color: #ffffff;
@@ -777,12 +808,14 @@ body {
   gap: 2vw;
 }
 
-.book-big {
+.book-big,
+.book-big img,
+.book-small img {
   width: 100%;
 }
 
-.book-big img {
-  width: 100%;
+.book-big img,
+.book-small img {
   border-radius: 0.1vw;
 }
 
@@ -793,11 +826,6 @@ body {
 
 .book-small {
   flex: 1;
-}
-
-.book-small img {
-  width: 100%;
-  border-radius: 0.1vw;
 }
 
 /* ==================== КОНТАКТЫ ==================== */
@@ -819,7 +847,6 @@ body {
   align-items: flex-start;
 }
 
-/* Левая колонка */
 .contacts-info {
   flex: 1;
 }
@@ -847,11 +874,10 @@ body {
 }
 
 .contacts-info-row {
-  font-size: 1.45vw;
-  line-height: 1.6;
-
   display: flex;
   gap: 0.8vw;
+  font-size: 1.45vw;
+  line-height: 1.6;
 }
 
 .contacts-info-row strong {
@@ -859,7 +885,6 @@ body {
   color: #ffffff;
 }
 
-/* Правая колонка */
 .contacts-map-wrapper {
   flex: 1;
   display: flex;
@@ -877,23 +902,21 @@ body {
 .map-container {
   width: 100%;
   height: 40vw;
-  background-color: #333;
+  background-color: #333333;
 }
 
-/* Адрес под картой */
 .address-under-map {
   color: #ffffff;
   font-size: 1.4vw;
-  text-align: center;
   text-align: right;
   margin-top: 3vw;
 }
 
-/* ==================== Пространство ==================== */
+/* ==================== ПРОСТРАНСТВО ==================== */
 
 .space-longread {
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
 }
 
 .longread-block {
@@ -946,7 +969,7 @@ body {
 .floor-title h3 {
   font-size: 1.4vw;
   text-align: right;
-  margin: -3vw 0 0 0;
+  margin: -3vw 0 0;
   padding-right: 4.3vw;
 }
 
@@ -960,8 +983,8 @@ body {
 
 .rules-preview {
   min-height: 100vh;
-  background: #000;
-  color: #fff;
+  background: #000000;
+  color: #ffffff;
   padding: 6vw 5.5vw;
   display: flex;
   justify-content: space-between;
@@ -974,7 +997,6 @@ body {
   font-size: 23vw;
   line-height: 17vw;
   text-transform: uppercase;
-
   max-width: 70vw;
 }
 
@@ -985,15 +1007,10 @@ body {
 
 .rules-preview-button {
   background-color: #9c0c0c;
-  color: #fff;
-  text-decoration: none;
+  color: #ffffff;
   font-size: 1.4vw;
   padding: 1.4vw 4.5vw;
-  border-radius: 0.1vw;
-  display: inline-flex;
   gap: 2vw;
-  align-items: center;
-  transition: all 0.3s ease;
   margin-bottom: 0.4vw;
 }
 
@@ -1004,4 +1021,288 @@ body {
 .rules-preview-button span {
   font-size: 2vw;
   line-height: 1;
+}
+
+/* ==================== МЕРОПРИЯТИЯ ==================== */
+
+.events-page {
+  background: #000000;
+  color: #ffffff;
+}
+
+.events-hero {
+  background: #000000;
+  padding: 8vw 0 5vw;
+  overflow: hidden;
+}
+
+.events-title h1,
+.events-hero h1 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 23vw;
+  line-height: 0.9;
+  text-transform: uppercase;
+  text-align: right;
+  margin: 0 3vw;
+  color: #ffffff;
+}
+
+.events-slider-wrapper {
+  position: relative;
+  height: 55vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-image: url('../images/bg-event.svg');
+  background-repeat: no-repeat;
+  background-position-y: -4vw;
+  background-size: 100%;
+  margin-top: -11vw;
+}
+
+.events-slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-top: -4vw;
+}
+
+.events-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30vw;
+  opacity: 0;
+  transition: all 0.8s ease;
+  z-index: 0;
+}
+
+.events-slide img {
+  width: 100%;
+  height: 30vw;
+  object-fit: cover;
+  display: block;
+  border: 0.25vw solid #9c0c0c;
+}
+
+.events-slide.left {
+  opacity: 0.75;
+  transform: translate(-150%, -50%) rotate(-10deg) scale(0.78);
+  z-index: 2;
+}
+
+.events-slide.active {
+  opacity: 1;
+  transform: translate(-55%, -50%) rotate(3deg) scale(1);
+  z-index: 4;
+}
+
+.events-slide.right {
+  opacity: 0.75;
+  transform: translate(35%, -50%) rotate(10deg) scale(0.78);
+  z-index: 3;
+}
+
+.events-slide.hidden {
+  opacity: 0.55;
+  transform: translate(75%, -50%) rotate(14deg) scale(0.65);
+  z-index: 1;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #9c0c0c;
+  color: #ffffff;
+  border: none;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+  z-index: 10;
+  font-size: 1.5vw;
+  transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 5vw;
+}
+
+.next {
+  right: 5vw;
+}
+
+.events-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5vw;
+  margin-top: -4vw;
+}
+
+.events-dots span {
+  width: 0.5vw;
+  height: 0.5vw;
+  background: #555555;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.events-dots span.active {
+  background: #ffffff;
+  transform: scale(1.3);
+}
+
+.events-list {
+  padding: 5vw 5.5vw 9vw;
+  display: flex;
+  flex-direction: column;
+  gap: 8vw;
+}
+
+.event-card {
+  display: grid;
+  grid-template-columns: 28vw 1fr;
+  gap: 4vw;
+  align-items: unset;
+}
+
+.event-card:nth-child(even),
+.event-card.reverse {
+  grid-template-columns: 1fr 28vw;
+}
+
+.event-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event-info h2 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 20vw;
+  line-height: 0.8;
+  text-transform: uppercase;
+  margin: 0 0 2vw;
+}
+
+.event-info p {
+  font-size: 1.3vw;
+  line-height: 1.15;
+  max-width: 34vw;
+  margin: 0 0 3vw;
+}
+
+.event-button {
+  display: inline-block;
+  background: #9c0c0c;
+  color: #ffffff;
+  font-size: 1.2vw;
+  padding: 1vw 2vw;
+}
+
+.event-button:hover {
+  transform: scale(1.05);
+}
+
+.space-preview-events {
+  min-height: 100vh;
+  background-image: url('../images/events-space-bg.svg');
+  background-size: cover;
+  background-position: center;
+  padding: 8vw 5.5vw;
+  display: flex;
+  align-items: flex-end;
+}
+
+.space-preview-content {
+  max-width: 70vw;
+}
+
+.space-preview-events h2 {
+  font-family: 'Stadium', sans-serif;
+  font-size: 22vw;
+  line-height: 0.85;
+  text-transform: uppercase;
+  margin-bottom: 25vw;
+}
+
+.space-preview-events p {
+  font-size: 1.4vw;
+  line-height: 1.15;
+  max-width: 62vw;
+  margin: 0 0 3vw;
+}
+
+.space-button {
+  background: #ffffff;
+  color: #000000;
+  font-size: 1.3vw;
+  padding: 1vw 2vw;
+  gap: 1vw;
+}
+
+.space-button:hover {
+  transform: scale(1.05);
+}
+
+/* ==================== АДАПТИВ ==================== */
+
+@media (max-width: 768px) {
+  .error-hero {
+    min-height: 118vw;
+    padding: 18vw 5vw 16vw;
+  }
+
+  .error-title {
+    font-size: 27vw;
+  }
+
+  .error-content {
+    flex-direction: column;
+    gap: 8vw;
+    margin-top: 8vw;
+  }
+
+  .error-content p {
+    max-width: 86vw;
+    font-size: 4vw;
+  }
+
+  .error-button {
+    margin-top: 0;
+    padding: 3vw 5vw;
+    font-size: 4vw;
+  }
+
+  .footer,
+  .site-footer,
+  .error-footer {
+    padding: 8vw 5vw;
+  }
+
+  .footer-content,
+  .footer-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4vw;
+  }
+
+  .footer-nav a,
+  .footer-info p {
+    font-size: 4vw;
+  }
+
+  .footer-logo img {
+    width: 12vw;
+  }
+
+  .footer-name {
+    font-size: 22vw;
+    max-width: 90vw;
+  }
 }

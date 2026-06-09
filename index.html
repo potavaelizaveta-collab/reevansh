@@ -61,16 +61,26 @@
     <section class="winners">
       <h2 class="section-title">ПОБЕДИТЕЛИ НЕДЕЛИ</h2>
 
-      <div class="winners-slider" id="winnersSlider">
-        <button class="slider-btn" id="prevBtn">←</button>
+      <div class="events-slider-wrapper winners-slider-wrapper">
+        <div class="events-slider winners-slider">
+          <div class="events-slide winners-slide active">
+            <img src="images/fighter1.svg" alt="Боксёр 1" />
+          </div>
 
-        <div class="winners-track" id="winnersTrack">
-          <img src="images/fighter1.svg" alt="Боксёр 1" />
-          <img src="images/fighter2.svg" alt="Боксёр 2" />
-          <img src="images/fighter3.svg" alt="Боксёр 3" />
+          <div class="events-slide winners-slide">
+            <img src="images/fighter2.svg" alt="Боксёр 2" />
+          </div>
+
+          <div class="events-slide winners-slide">
+            <img src="images/fighter3.svg" alt="Боксёр 3" />
+          </div>
         </div>
+      </div>
 
-        <button class="slider-btn" id="nextBtn">→</button>
+      <div class="events-dots winners-dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
       </div>
     </section>
     <!-- ХОЧЕШЬ УВИДЕТЬ ВЖИВУЮ -->
@@ -132,5 +142,28 @@
         <button type="submit" class="btn-red">Отправить</button>
       </form>
     </section>
-  </body>
+    <footer class="footer site-footer footer-inverse">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="contact.html">Контакты</a>
+          <a href="rules.html">Правила посещения</a>
+          <a href="shop.html">Магазин мерча</a>
+          <a href="events.html">Мероприятия</a>
+          <a href="space.html">Пространство</a>
+        </nav>
+
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.svg" alt="logo" />
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <p>Б25Д310</p>
+          <p>Куратор: Камила Рихтер</p>
+        </div>
+
+        <div class="footer-name">ПОТАВА ЕЛИЗАВЕТА</div>
+      </div>
+    </footer>  </body>
 </html>

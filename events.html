@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Мероприятия</title>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <script defer src="javascripts/scripts.js"></script>
   </head>
   <body>
     <nav class="mainMenu">
@@ -15,11 +16,137 @@
         <a class="mainMenuLink active" href="events.html">Мероприятия</a>
         <a class="mainMenuLink" href="space.html">Пространство</a>
       </div>
-
       <a href="index.html">
         <img class="logo" src="images/logo.svg" alt="logo" />
       </a>
     </nav>
-    <h1>Мероприятия</h1>
+    <section class="events-hero">
+      <div class="events-title">
+        <h1>Мероприятия</h1>
+      </div>
+
+      <div class="events-slider-wrapper">
+        <div class="events-slider">
+          <div class="events-slide active">
+            <img src="images/event01.svg" alt="Секретный боец" />
+          </div>
+
+          <div class="events-slide">
+            <img src="images/event02.svg" alt="After Party" />
+          </div>
+
+          <div class="events-slide">
+            <img src="images/event03.svg" alt="Ring Fashion" />
+          </div>
+
+          <div class="events-slide">
+            <img src="images/event04.svg" alt="Мастер класс" />
+          </div>
+        </div>
+      </div>
+
+      <div class="events-dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="events-list">
+      <div class="event-card">
+        <img src="images/event-01.svg" alt="" />
+
+        <div class="event-info">
+          <h2>СЕКРЕТНЫЙ БОЕЦ</h2>
+          <p>
+            Секретный боец держит интригу до последнего. Его имя остаётся
+            неизвестным до выхода на ринг.
+          </p>
+
+          <a href="404.html" class="event-button">Купить билет</a>
+        </div>
+      </div>
+
+      <div class="event-card reverse">
+        <div class="event-info">
+          <h2>МАСТЕР КЛАСС</h2>
+          <p>
+            Прими участие в мастер-классе по боям и познакомься с базовыми
+            техниками и приёмами.
+          </p>
+
+          <a href="404.html" class="event-button">Купить билет</a>
+        </div>
+
+        <img src="images/event-02.svg" alt="" />
+      </div>
+
+      <div class="event-card">
+        <img src="images/event-03.svg" alt="" />
+
+        <div class="event-info">
+          <h2>AFTER PARTY</h2>
+          <p>
+            Продолжение вечера в неформальной атмосфере, музыка, общение и отдых
+            после боёв.
+          </p>
+
+          <a href="404.html" class="event-button">Купить билет</a>
+        </div>
+      </div>
+
+      <div class="event-card reverse">
+        <div class="event-info">
+          <h2>RING FASHION</h2>
+          <p>Событие, где мода и спорт объединяются в одном пространстве.</p>
+
+          <a href="404.html" class="event-button">Купить билет</a>
+        </div>
+
+        <img src="images/event-04.svg" alt="" />
+      </div>
+    </section>
+
+    <section class="space-preview-events">
+      <div class="space-preview-content">
+        <h2>Изучи пространство</h2>
+
+        <p>
+          Перед посещением мероприятия обязательно изучи пространство. <br />
+          Это поможет быстрее сориентироваться, понять расположение <br />
+          зон и чувствовать себя комфортно с первых минут.
+        </p>
+
+        <a href="space.html" class="space-button">
+          Посмотреть
+          <span>⟶</span>
+        </a>
+      </div>
+    </section>
+    <footer class="footer site-footer">
+      <div class="footer-content">
+        <nav class="footer-nav">
+          <a href="contact.html">Контакты</a>
+          <a href="rules.html">Правила посещения</a>
+          <a href="shop.html">Магазин мерча</a>
+          <a href="events.html">Мероприятия</a>
+          <a href="space.html">Пространство</a>
+        </nav>
+
+        <a href="index.html" class="footer-logo">
+          <img src="images/logo.svg" alt="logo" />
+        </a>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-info">
+          <p>Б25Д310</p>
+          <p>Куратор: Камила Рихтер</p>
+        </div>
+
+        <div class="footer-name">ПОТАВА ЕЛИЗАВЕТА</div>
+      </div>
+    </footer>
   </body>
 </html>
