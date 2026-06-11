@@ -17,6 +17,30 @@
   overflow: hidden;
 }
 
+.events-page .space-preview-events {
+  align-items: stretch;
+}
+
+.events-page .space-preview-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: none;
+}
+
+.events-page .space-preview-events h2 {
+  margin-bottom: -1.7vw;
+}
+
+.events-page .space-preview-events p {
+  margin-bottom: 3vw;
+}
+
+.events-page .space-button {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
 @media (max-width: 768px) {
   body.mobile-menu-open {
     overflow: hidden;
@@ -965,7 +989,7 @@
   .contacts-page .mainMenu.menu-open .menu-toggle,
   .rules-page .mainMenu.menu-open .menu-toggle {
     top: 9.92vw;
-    left: 12.3vw;
+    left: 12vw;
     width: 10.69vw;
     height: 10.69vw;
   }
@@ -1006,7 +1030,7 @@
   .rules-page .mainMenu.menu-open .menuLeft {
     position: absolute;
     top: 48.35vw;
-    left: 12.3vw;
+    left: 12vw;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1018,7 +1042,7 @@
   .contacts-page .mainMenu.menu-open .mainMenuLink,
   .rules-page .mainMenu.menu-open .mainMenuLink {
     color: #ffffff;
-    font-size: 8.14vw;
+    font-size: 6vw;
     line-height: 1;
   }
 
@@ -1562,8 +1586,9 @@
     width: 100%;
     height: 118vw;
     margin: -2.04vw 0 0;
-    background-position: center 22vw;
-    background-size: 115%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .home-page .winners-slider {
@@ -1668,7 +1693,18 @@
   }
 
   .home-page .poster-link {
+    --poster-x: 0vw;
+    --poster-y: 0vw;
+    --poster-angle: 0deg;
+
+    position: relative;
+    inset: auto;
     width: 82.7vw;
+    transform: none;
+  }
+
+  .home-page .poster-link:hover {
+    transform: none;
   }
 
   .home-page .poster-link::after {
@@ -2017,16 +2053,26 @@
   }
 
   .events-page .space-preview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     max-width: none;
   }
 
   .events-page .space-preview-events h2 {
-    display: none;
+    order: 1;
+    display: block;
+    width: 82.7vw;
+    margin: 0 0 6.11vw;
+    color: #ffffff;
+    font-size: 22.4vw;
+    line-height: 0.78;
   }
 
   .events-page .space-preview-events p {
+    order: 2;
     width: 75vw;
-    margin: 0 0 7.12vw;
+    margin: 0 0 9.16vw;
     color: #ffffff;
     font-size: 3.56vw;
     line-height: 1.18;
@@ -2037,6 +2083,7 @@
   }
 
   .events-page .space-button {
+    order: 3;
     padding: 2.8vw 5.09vw;
     border-radius: 0;
     font-size: 3.05vw;
@@ -2070,5 +2117,112 @@
     color: #ffffff;
     font-size: 55vw;
     line-height: 40vw;
+  }
+
+  /* One mobile menu size for every page */
+  .mainMenu.menu-open {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100dvh;
+    padding: 0;
+    align-items: flex-start;
+    background: #000000;
+  }
+
+  .mainMenu.menu-open > a {
+    position: absolute;
+    top: 10.69vw;
+    right: 10.2vw;
+  }
+
+  .mainMenu.menu-open .logo {
+    width: 12.21vw;
+  }
+
+  .mainMenu.menu-open .menu-toggle {
+    top: 9.92vw;
+    left: 12.3vw;
+    width: 10.69vw;
+    height: 10.69vw;
+  }
+
+  .mainMenu.menu-open .menu-toggle span {
+    top: 4.83vw;
+    width: 10.69vw;
+    height: 1.02vw;
+  }
+
+  .mainMenu.menu-open .menu-toggle span:nth-child(1) {
+    transform: rotate(45deg);
+  }
+
+  .mainMenu.menu-open .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mainMenu.menu-open .menu-toggle span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .mainMenu.menu-open .menuLeft {
+    position: absolute;
+    top: 48.35vw;
+    left: 12.3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.69vw;
+  }
+
+  .mainMenu.menu-open .mainMenuLink {
+    color: #ffffff;
+    font-size: 5.5vw;
+    line-height: 1;
+  }
+
+  .mainMenu.menu-open .mainMenuLink.active {
+    font-weight: 700;
+  }
+
+  .home-page .mainMenu.menu-open .menuLeft,
+  .events-page .mainMenu.menu-open .menuLeft,
+  .space-page .mainMenu.menu-open .menuLeft,
+  .rules-page .mainMenu.menu-open .menuLeft,
+  .shop-page .mainMenu.menu-open .menuLeft,
+  .product-page .mainMenu.menu-open .menuLeft,
+  .contacts-page .mainMenu.menu-open .menuLeft {
+    position: absolute;
+    top: 48.35vw;
+    left: 12.3vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10.69vw;
+  }
+
+  .home-page .mainMenu.menu-open .mainMenuLink,
+  .events-page .mainMenu.menu-open .mainMenuLink,
+  .space-page .mainMenu.menu-open .mainMenuLink,
+  .rules-page .mainMenu.menu-open .mainMenuLink,
+  .shop-page .mainMenu.menu-open .mainMenuLink,
+  .product-page .mainMenu.menu-open .mainMenuLink,
+  .contacts-page .mainMenu.menu-open .mainMenuLink {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 5.5vw;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .home-page .mainMenu.menu-open .mainMenuLink.active,
+  .events-page .mainMenu.menu-open .mainMenuLink.active,
+  .space-page .mainMenu.menu-open .mainMenuLink.active,
+  .rules-page .mainMenu.menu-open .mainMenuLink.active,
+  .shop-page .mainMenu.menu-open .mainMenuLink.active,
+  .product-page .mainMenu.menu-open .mainMenuLink.active,
+  .contacts-page .mainMenu.menu-open .mainMenuLink.active {
+    font-weight: 700;
   }
 }

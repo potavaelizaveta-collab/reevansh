@@ -14,7 +14,7 @@ function initMap() {
   const placemark = new ymaps.Placemark(
     [55.7873, 37.641764],
     {
-      balloonContent: 'НИУ ВШЭ, ADC<br>Пантелеевская, 53'
+      balloonContent: 'НИУ ВШЭ, Пантелеевская, 53'
     },
     {
       preset: 'islands#redIcon'
