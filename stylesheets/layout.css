@@ -28,6 +28,37 @@ img {
   max-width: 100%;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  body,
+  body * {
+    cursor: none;
+  }
+
+  .difference-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 3.2vw;
+    height: 3.2vw;
+    background: #ffffff;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition:
+      width 0.18s ease,
+      height 0.18s ease,
+      opacity 0.18s ease;
+  }
+
+  .difference-cursor.is-active {
+    width: 4.2vw;
+    height: 4.2vw;
+  }
+}
+
 /* ==================== НАВБАР ==================== */
 
 .mainMenu {
@@ -443,6 +474,16 @@ img {
   text-transform: uppercase;
   color: #ffffff;
   margin: 0;
+}
+
+.hero-title-video {
+  display: inline-block;
+  width: 20vw;
+  height: 12vw;
+  margin-left: 1vw;
+  object-fit: cover;
+  vertical-align: baseline;
+  transform: translateY(1.5vw);
 }
 
 .red {
@@ -1103,7 +1144,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 30vw;
+  width: 33vw;
   opacity: 0;
   transition: all 0.8s ease;
   z-index: 0;
@@ -1130,7 +1171,7 @@ img {
 
 .events-slide.right {
   opacity: 0.75;
-  transform: translate(35%, -50%) rotate(10deg) scale(0.78);
+  transform: translate(21%, -50%) rotate(10deg) scale(0.78);
   z-index: 3;
 }
 

@@ -1,4 +1,30 @@
 document.addEventListener('DOMContentLoaded', function () {
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    const cursor = document.createElement('div')
+    cursor.className = 'difference-cursor'
+    document.body.append(cursor)
+
+    document.addEventListener('mousemove', function (event) {
+      cursor.style.left = `${event.clientX}px`
+      cursor.style.top = `${event.clientY}px`
+      cursor.style.opacity = '1'
+    })
+
+    document.addEventListener('mouseleave', function () {
+      cursor.style.opacity = '0'
+    })
+
+    document.querySelectorAll('a, button, input, textarea, select, [role="button"]').forEach((item) => {
+      item.addEventListener('mouseenter', function () {
+        cursor.classList.add('is-active')
+      })
+
+      item.addEventListener('mouseleave', function () {
+        cursor.classList.remove('is-active')
+      })
+    })
+  }
+
   const menu = document.querySelector('.mainMenu')
   let menuToggle = menu?.querySelector('.menu-toggle')
 

@@ -1524,6 +1524,12 @@
     font-size: 27vw;
   }
 
+  .home-page .hero-title-video {
+    width: 19vw;
+    height: 12vw;
+    margin-left: 2vw;
+  }
+
   .home-page .hero-image-section,
   .home-page .hero-image-wrapper {
     position: relative;
@@ -1953,7 +1959,7 @@
   }
 
   .events-page .events-slide.active {
-    transform: translate(-50%, -50%) rotate(3deg) scale(1);
+    transform: translate(-68%, -50%) rotate(3deg) scale(1);
   }
 
   .events-page .events-slide.right {
