@@ -681,16 +681,17 @@ img {
   margin: 0;
 }
 
-.poster-link {
+.poster-item {
   --poster-x: 0vw;
   --poster-y: 0vw;
   --poster-angle: 0deg;
 
   z-index: 4;
-  display: block;
   position: absolute;
-  overflow: hidden;
-  transition: transform 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2vw;
   transform: translate(var(--poster-x), var(--poster-y))
     rotate(var(--poster-angle));
   transform-origin: center;
@@ -716,9 +717,15 @@ img {
   width: 48vw;
 }
 
-.poster-link:hover {
+.poster-item:hover {
   transform: translate(var(--poster-x), var(--poster-y))
     rotate(var(--poster-angle)) scale(1.04);
+}
+
+.poster-link {
+  display: block;
+  width: 100%;
+  overflow: hidden;
 }
 
 .poster-link img {
@@ -737,6 +744,31 @@ img {
 
 .poster-link:hover::after {
   background: rgba(0, 0, 0, 0.45);
+}
+
+.poster-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10vw;
+  padding: 0.8vw 1.6vw;
+  background: #ffffff;
+  color: #000000;
+  font-size: 1.1vw;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.poster-button:hover {
+  background: #dbdbdb;
+  transform: scale(1.04);
+}
+
+.poster-small .poster-button {
+  align-self: flex-end;
 }
 
 /* ==================== БУДЬ В КУРСЕ ==================== */
